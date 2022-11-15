@@ -9,6 +9,7 @@ $('form').on('submit', function (evt) {
 
   const $form = $(evt.target);
   const title = $form.find('#title').val();
+  const rating = $form.find('#rating').val();
 
   if (title.trim().length < 2) {
     alert("title needs to be at least 2 characters long.");
@@ -16,18 +17,19 @@ $('form').on('submit', function (evt) {
     return;
   }
 
-  const rating = $form.find('#rating').val();
-  $('#my-movies').append(`<li>${title} (${rating}) <button>remove</button></li>`);
-  console.log(title, rating);
+  addMovie(title, rating);
 });
 
 // DECOMPOSE FUNCTIONS GOING FORWARD
-// function addMovie(movie, rating){}
 
-// function deleteMovie(){}
-// function displayMovie(){}
+function addMovie(movie, rating) {
+  $('#my-movies').append(`<li>${movie} (${rating}) <button>remove</button></li>`);
+}
 
-
-$('#my-movies').on('click', "button", function (evt) {
+function deleteMovie(evt) {
   $(evt.target).parent().remove();
-});
+}
+
+$('#my-movies').on('click', "button", deleteMovie);
+
+
