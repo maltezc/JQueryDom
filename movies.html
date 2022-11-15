@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <!--
+    Build an application that uses jQuery to do the following:
+
+    Contains a form with two inputs for a title and rating along with a button
+    to submit the form.
+      - title (text)
+      - rating (number slider)
+
+    When the form has is submitted, capture the values for each of the inputs
+    and append them do the DOM along with a button to remove each title and
+    rating from the DOM.
+
+    When the button to remove is clicked, remove each title and
+    rating from the DOM.
+   -->
+
+  <h1>Movies</h1>
+
+  <ul id="my-movies"></ul>
+
+  <form>
+    <label for="title">Movie Title</label>
+    <input type="text" id="title" required>
+
+    <label for="rating">Movie Rating</label>
+    <input type="number" id="rating" min="1" max="5" value="5">
+
+    <button type="submit">Submit</button>
+  </form>
+
+
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="app.js"></script>
+
+
+
+</body>
+
+</html>
